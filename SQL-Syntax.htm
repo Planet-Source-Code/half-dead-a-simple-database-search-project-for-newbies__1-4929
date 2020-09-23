@@ -1,0 +1,248 @@
+<HTML>
+
+<HEAD>
+</HEAD>
+
+<BODY TOPMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" BGCOLOR="#FFFFFF" TEXT="#000000" ALINK="#003399" LINK="#003399" VLINK="#003399">
+<table width="550" align="center">
+<tr> 
+<td><font face=Verdana,Arial size=3 color="#0080C0"><b>Basics of Select Statement</b></font></td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve all records 
+with all fields</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT fldFirstName, fldLastName FROM table_name"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve all records 
+with only First Name and Last Name</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name ORDER BY fldDate"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve all records 
+sort by Date</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name ORDER BY fldDate DESC"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve all records 
+sort by Date descending (Latest date goes first)</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT DISTINCT fldState FROM tblUSCity ORDER BY fldState"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve all records 
+from fldState where all duplicates have been eliminated sort by fldState</font> 
+</td>
+</tr>
+<tr> 
+<td><font face=Verdana,Arial size=3 color="#0080C0"><b>Conditional Selection</b></font></td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldFirstName = 'Frank'"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldFirstName is "Frank"</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldSalary >= 50000"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldSalary is greater than or equal to 50000</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldDate >= #" & Date - 7 & "#"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldDate is within the previous 7 days</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldLastName LIKE 'f%'"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldLastName starts with letter "f"</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldLastName LIKE '%er'"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldLastName ends with "er"</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldLastName LIKE '%frank%'"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldLastName contains "frank" anywhere (even partial of a word)</font> 
+</td>
+</tr>
+<tr> 
+<td><font face=Verdana,Arial size=3 color="#0080C0"><b>Compound Conditions / Logical 
+Operators</b></font></td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldSex = 'Male' AND fldAge >= 21"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where the following two conditions must all be satisfied: fldSex is Male and fldAge 
+is greater than or equal to 21</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldSex = 'Female' OR fldAge >= 21"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where any of the following two conditions is satisfied: fldSex is Female or fldAge 
+is greater than or equal to 21</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldPosition = 'Manager' AND _<br>
+(fldSalary > 50000 OR fldBenefit > 10000)"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldPostition must be Manager and fldSalary is greater than 50000 or fldBenefit 
+is greater than 10000</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldLastName IN ('Andrews','Dixon')"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldLastName is either Andrews or Dixon</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table_name WHERE fldSalary BETWEEN 30000 AND 50000"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+where fldSalary is between 30000 and 50000</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT * FROM table1, table2 WHERE table1.fldID = table2.fldOwnerID"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Retrieve only the record(s) 
+from both table1 and table2 where fldID in table1 matches fldOwnerID in table2</font> 
+</td>
+</tr>
+<tr> 
+<td><font face=Verdana,Arial size=3 color="#0080C0"><b>Aggregate Operators</b></font></td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT MAX(fldPrice) FROM tblBook"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Find out the highest 
+price from table Book</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT AVG(fldAge) FROM tblEmployee"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Find out the average 
+age of all employees.</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT COUNT(fldSalary) FROM tblEmployees WHERE fldSalary > 30000"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Find out how many employees 
+have salary higher than 30,000.</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT MIN(fldAge) FROM tblStudents"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Find out the youngest 
+student.</font> 
+</td>
+</tr>
+<tr> 
+<td><font face="courier,Arial" size=2 color="maroon">mySQL 
+= "SELECT SUM(fldHits) FROM tblAllWebSites"</font></td>
+</tr>
+<tr> 
+<td> 
+<li type="square"><font face=Arial size=2><b>RESULT: </b>Find out the total hits 
+of all the websites.</font> 
+</td>
+</tr>
+</table>
+</BODY>
+
+</HTML>
