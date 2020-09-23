@@ -1,0 +1,1 @@
+The sql-syntax.htm are some references i found on the net.
